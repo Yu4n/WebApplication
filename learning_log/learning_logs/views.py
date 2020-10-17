@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
+
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 
 
 def index(request):
-    """The home page for learning log."""
+    """The home page for Learning Log."""
     return render(request, 'learning_logs/index.html')
 
 
@@ -34,6 +35,7 @@ def new_topic(request):
         if form.is_valid():
             form.save()
             return redirect('learning_logs:topics')
+
     # Display a blank or invalid form.
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
@@ -67,12 +69,13 @@ def edit_entry(request, entry_id):
 
     if request.method != 'POST':
         # Initial request; pre-fill form with the current entry.
-        form = EntryForm()
+        form = EntryForm(instance=entry)
     else:
         # POST data submitted; process data.
         form = EntryForm(instance=entry, data=request.POST)
         if form.is_valid():
             form.save()
             return redirect('learning_logs:topic', topic_id=topic.id)
+
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'learning_logs/edit_entry.html', context)
