@@ -5,14 +5,13 @@
     <p>Topics</p>
 
     <p>Entries:</p>
-    <p>
-    <a href="{% url 'learning_logs:new_entry' topic.id %}">Add new entry</a>
-    </p>
+
 
     <ol>
         {% for topic in topics %}
             <li>
-                <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+                <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a> -
+                <a href="{% url 'learning_logs:new_entry' topic.id %}">Add new entry</a>
             </li>
         {% empty %}
             <li>No topics have been added yet.</li>
