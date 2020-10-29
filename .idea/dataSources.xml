@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\Yu4n1a\PycharmProjects\WebApplication\learning_log\db.sqlite3</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="db [2]" uuid="981dbb93-172a-4a4b-a266-dabf680b9424">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Yu4n\PycharmProjects\WebApplication\learning_log\db.sqlite3</jdbc-url>
+    </data-source>
   </component>
 </project>
